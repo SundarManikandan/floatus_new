@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        .banner-video {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .banner-video video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .banner-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+        }
+        .banner-content h1 {
+            font-size: 5em;
+            text-align: center;
+            animation: slideFromTop 2s ease-out 3s forwards;
+            opacity: 0;
+        }
+        .banner-content p {
+            font-size: 2em;
+            opacity: 0;
+        }
+        .banner-content #p1 {
+            animation: slideFromTop 6s ease-out 13s forwards;
+        }
+        .banner-content #p2 {
+            animation: slideFromTop 5s ease-out 11s forwards;
+        }
+        .banner-content #p3 {
+            animation: slideFromTop 4s ease-out 9s forwards;
+        }
+        .banner-content #p4 {
+            animation: slideFromTop 3s ease-out 7s forwards;
+        }
+        .banner-content #p5 {
+            animation: slideFromTop 2s ease-out 5s forwards;
+        }
+        @keyframes slideFromTop {
+            0% {
+                transform: translate(-50%, -150%);
+                opacity: 0;
+            }
+            100% {
+                transform: translate(-50%, -50%);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="banner-video">
+        <video autoplay muted loop>
+            <source src="assets/video/Floatus Video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="banner-content">
+            <h1>Welcome to Floatus</h1>
+            <p id="p1">Discover Tranquility</p>
+            <p id="p2">Discover Serenity</p>
+            <p id="p3">Discover Peace</p>
+            <p id="p4">Discover Harmony</p>
+            <p id="p5">Discover Bliss</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Search Bar</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border-radius: 5px 0 0 5px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+button {
+    padding: 10px 20px;
+    border-radius: 0 5px 5px 0;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    outline: none;
+}
+
+button:hover {
+    background-color: #e0e0e0;
+}
+</style>
+</head>
+<body>
+<div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search...">
+    <button onclick="searchFunction()">Search</button>
+</div>
+<div id="searchResults">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt neque adipisci hic accusamus dicta delectus, voluptate suscipit blanditiis cumque sunt repellat praesentium! In nam, sunt laborum modi ex eligendi laudantium?
+    
+</div>
+<script>
+function searchFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById('searchInput');
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("searchResults");
+    li = ul.getElementsByTagName('li');
+
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
+</body>
+</html>
